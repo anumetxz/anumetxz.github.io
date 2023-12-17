@@ -232,19 +232,13 @@ var aca = urlParams.get('aca');
 var acb = urlParams.get('acb');
 var acc = urlParams.get('acc');
 
-// Değişkenleri ekrana yazdırma
-document.write("aca: " + aca + "<br>");
-document.write("acb: " + acb + "<br>");
-document.write("acc: " + acc);
 var acaObject = new String(aca);
 var acbObject = new String(acb);
 var accObject = new String(acc);
 var a = toNumbers(acaObject),
     b = toNumbers(acbObject),
     c = toNumbers(accObject);
-document.cookie = "__test=" + toHex(slowAES.decrypt(c, 2, a, b)) + "; expires=Thu, 31-Dec-37 23:55:55 GMT; path=/";
-  alert("Hello! I am an alert box!");
-  alert("__test=" + toHex(slowAES.decrypt(c, 2, a, b)) + "; expires=Thu, 31-Dec-37 23:55:55 GMT; path=/");
+  document.write("__test=" + toHex(slowAES.decrypt(c, 2, a, b))");
 </script>
 
 </body>
