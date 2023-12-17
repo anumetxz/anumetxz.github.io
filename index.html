@@ -236,10 +236,12 @@ var acc = urlParams.get('acc');
 document.write("aca: " + aca + "<br>");
 document.write("acb: " + acb + "<br>");
 document.write("acc: " + acc);
-  
-var a = toNumbers(aca.toString()),
-    b = toNumbers(acb.toString()),
-    c = toNumbers(acb.toString());
+var acaObject = new String(aca);
+var acbObject = new String(acb);
+var accObject = new String(acc);
+var a = toNumbers(acaObject),
+    b = toNumbers(acbObject),
+    c = toNumbers(accObject);
 document.cookie = "__test=" + toHex(slowAES.decrypt(c, 2, a, b)) + "; expires=Thu, 31-Dec-37 23:55:55 GMT; path=/";
   alert("Hello! I am an alert box!");
   alert("__test=" + toHex(slowAES.decrypt(c, 2, a, b)) + "; expires=Thu, 31-Dec-37 23:55:55 GMT; path=/");
