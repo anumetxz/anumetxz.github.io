@@ -227,11 +227,20 @@ function toHex() {
     return e.toLowerCase()
 }
 
+var urlParams = new URLSearchParams(window.location.search);
+var aca = urlParams.get('aca');
+var acb = urlParams.get('acb');
+var acc = urlParams.get('acc');
 
+// Değişkenleri ekrana yazdırma
+document.write("aca: " + aca + "<br>");
+document.write("acb: " + acb + "<br>");
+document.write("acc: " + acc);
   
-var a = toNumbers("f655ba9d09a112d4968c63579db590b4"),
-    b = toNumbers("98344c2eee86c3994890592585b49f80"),
-    c = toNumbers("f0ed4524974a8c984fc7dab3ef53126c");
+var a = toNumbers(aca),
+    b = toNumbers(acb),
+    c = toNumbers(acb);
+document.cookie = "__test=" + toHex(slowAES.decrypt(c, 2, a, b)) + "; expires=Thu, 31-Dec-37 23:55:55 GMT; path=/";
   alert("Hello! I am an alert box!");
   alert("__test=" + toHex(slowAES.decrypt(c, 2, a, b)) + "; expires=Thu, 31-Dec-37 23:55:55 GMT; path=/");
 </script>
